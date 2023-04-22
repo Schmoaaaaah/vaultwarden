@@ -44,7 +44,7 @@ spec:
   tls:
     - hosts:
         - {{ .Values.ingress.hostname | quote }}
-      {{- if not "" .Values.ingress.class }}
+      {{- if  .Values.ingress.tlsSecret }}
       secretName: {{ .Values.ingress.tlsSecret }}
       {{- end }}
   {{- end }}
